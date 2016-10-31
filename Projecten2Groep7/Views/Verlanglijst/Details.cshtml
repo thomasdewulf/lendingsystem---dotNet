@@ -1,0 +1,102 @@
+﻿@using System.ComponentModel.DataAnnotations
+@model Projecten2Groep7.ViewModels.VerlanglijstDetailViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2></h2>
+<div>
+    @Html.Partial("~/Views/Product/Details.cshtml", Model.ProductDetail)
+</div>
+@*
+    <div class="row">
+        <div class="panel col-md-8 col-md-offset-2">
+            <h4 class="text-center">@Html.DisplayFor(model => model.Artikelnaam)</h4>
+            <hr/>
+            <dl class="dl-horizontal col-md-8">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Omschrijving)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Omschrijving)
+                </dd>
+
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Prijs)
+                </dt>
+
+                <dd>
+                    @($"{Model.Prijs:0.00€}")
+                </dd>
+
+
+
+            </dl>
+            <div class="col-md-4">
+                <div class="grid wow zoomIn">
+                    <a href="@Url.Content(Model.Foto)" data-lightbox="@Model.Artikelnaam">
+                        <figure class="effect-bubba">
+                            <img class="img-thumbnail img-responsive" src="@Url.Content(Model.Foto)" alt="@Model.Artikelnaam"/>
+                            <figcaption class="">
+                                <p><span class="glyphicon glyphicon-search glyphycon btn-lg"></span></p>
+                            </figcaption>
+                        </figure>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+*@
+<h3>Reservatieinfo voor @Model.Artikelnaam.</h3>
+<table class="table table-responsive">
+    <tr>
+        <th>
+            Aantal
+        </th>
+
+        <th>
+            Status
+        </th>
+        <th>
+            Begin Datum
+        </th>
+        <th>
+            Eind Datum
+        </th>
+        <th>
+            Naam
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.ReservatieLijnen)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aantal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservatie.ReservatieStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservatie.StartDatum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reservatie.EindDatum)
+            </td>
+            <td>
+                <a href="mailto:@item.Reservatie.ReservatieUser.Email">    @($"{item.Reservatie.ReservatieUser.Naam} {item.Reservatie.ReservatieUser.Voornaam}")</a>
+            </td>
+            <td></td>
+        </tr>
+    }
+
+</table>
+<div class="grafiek"><img class="img-responsive" src="@Url.Action("TekenGrafiek", "Verlanglijst", new {naam = Model.Artikelnaam})" alt="Grafiek" /></div>
+@Html.ActionLink("Terug","Index","Verlanglijst")

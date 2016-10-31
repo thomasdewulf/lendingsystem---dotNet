@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Projecten2Groep7.Models.Domain.ReservatieLijn>
+
+@{
+    ViewBag.Title = "Reservaties";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+    <tr>
+        <th>
+  
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Artikelnaam)
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Aantal)
+        </th>
+        <th>
+            @($"Start datum")
+        </th>
+        <th>
+            @($"Eind datum")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="visible-lg visible-md visible-sm">
+            <div class="grid wow zoomIn">
+                <a href="@Url.Content(item.Product.Foto)" data-lightbox="@item.Product.Artikelnaam">
+                    <figure class="effect-bubba">
+                        <img class="img-thumbnail img-responsive" src="@Url.Content(item.Product.Foto)" alt="@item.Product.Artikelnaam" />
+                        <figcaption class="">
+                            <p><span class="glyphicon glyphicon-search glyphycon btn-lg"></span></p>
+                        </figcaption>
+                    </figure>
+
+                </a>
+            </div>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.Artikelnaam)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.Aantal)
+        </td>
+        <td
+        >
+            @{
+                var sDate = item.GeefStartDatumVoorReservatie();
+            }
+            @($"{sDate:dd/MM/yyyy}")
+        </td>
+        <td>
+            @{
+                var eDate = item.GeefEindDatumVoorReservatie();
+            }
+            @($"{eDate:dd/MM/yyyy}")
+        </td>
+    </tr>
+    
+    @*<tr>
+        foreach (var p in item.ReservatieLijnen)
+        {
+        <td>
+            @Html.DisplayFor(modelItem => p.Product.Artikelnaam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => p.Product.Artikelnummer)
+        </td>
+        }
+    </tr>*@
+}
+
+</table>

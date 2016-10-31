@@ -1,0 +1,113 @@
+﻿@model PagedList.IPagedList<Projecten2Groep7.ViewModels.ProductViewModel>
+@using PagedList.Mvc;
+@using Projecten2Groep7.Controllers
+
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th class="visible-lg visible-md visible-sm">
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Artikelnaam)
+        </th>
+        <th class="visible-lg visible-md visible-sm">
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Omschrijving)
+        </th>
+        <th class="visible-lg visible-md visible-sm">
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Doelgroepen)
+        </th>
+        </th>
+        <th class="visible-lg visible-md visible-sm">
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Leergebieden)
+        </th>
+        @*<th class="visible-lg visible-md">
+                @Html.DisplayNameFor(model => model.FirstOrDefault().AantalProductStukken)
+            </th>*@
+        <th class="visible-lg visible-md">
+            @Html.DisplayNameFor(model => model.FirstOrDefault().AantalInCatalogus)
+        </th>
+        <th>
+
+        </th>
+        <th>
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().zitInVerlanglijst)
+        </th>
+    </tr>
+    </thead>
+   
+    <tbody >
+    @foreach (var item in Model)
+    {
+     
+        <tr>
+            <td class="visible-lg visible-md visible-sm">
+                <div class="grid wow zoomIn">
+                    <a href="@Url.Content(item.Foto)" data-lightbox="@item.Artikelnaam">
+                        <figure class="effect-bubba">
+                            <img class="img-thumbnail img-responsive" src="@Url.Content(item.Foto)" alt="@item.Artikelnaam" />
+                            <figcaption class="">
+                                <p><span class="glyphicon glyphicon-search glyphycon btn-lg"></span></p>
+                            </figcaption>
+                        </figure>
+
+                    </a>
+                </div>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artikelnaam)
+            </td>
+            <td class="visible-lg visible-md visible-sm">
+                @Html.DisplayFor(modelItem => item.Omschrijving)
+            </td>
+            <td class="visible-lg visible-md visible-sm">
+                <ul>
+                    @foreach (var doelgroep in item.Doelgroepen)
+                    {
+                        <li>@Html.DisplayFor(i => doelgroep.Naam)</li>
+                    }</ul>
+            </td>
+            <td class="visible-lg visible-md visible-sm">
+                <ul>
+                    @foreach (var leergebied in item.Leergebieden)
+                    {
+                        <li>@Html.DisplayFor(i => leergebied.Naam)</li>
+                    }
+                </ul>
+            </td>
+            @*<td class="text-center visible-lg visible-md">
+                    @Html.DisplayFor(modelItem => item.AantalProductStukken)
+                </td>*@
+            <td class="text-center visible-lg visible-md">
+                @Html.DisplayFor(modelItem => item.AantalInCatalogus)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new {id = item.ProductId})
+            </td>
+            <td>
+               
+
+                @using (Html.BeginForm("Add", "Verlanglijst", new {id = item.ProductId}))
+                {
+
+                    <button type="submit" class="btn btn-sm color-website  @Html.Raw(Html.Action("IsAlAanwezigInVerlanglijst", new {productNummer = item.ProductId, gebruiker = ViewBag.Gebruiker}))"><span class="glyphicon-list-alt glyphicon"></span></button>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zitInVerlanglijst)
+            </td>
+
+        </tr>
+      
+    }
+    </tbody>
+</table>
+
+<br />
+    Pagina @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) van @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

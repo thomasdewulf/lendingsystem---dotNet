@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Projecten2Groep7.Models.Domain.Product">
+    <Position X="1.75" Y="0.5" Width="2.75" />
+    <AssociationLine Name="ReservatieLijnen" Type="Projecten2Groep7.Models.Domain.ReservatieLijn">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-3.558" Y="1.636" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAAAAAAQAAAgAAAAgAAAAAAAAAAAoIASAAEI6ACEAUQ=</HashCode>
+      <FileName>Models\Domain\Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Doelgroepen" />
+      <Property Name="Leergebieden" />
+      <Property Name="ReservatieLijnen" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Projecten2Groep7.Models.Domain.Doelgroep">
+    <Position X="7.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\Doelgroep.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projecten2Groep7.Models.Domain.Leergebied">
+    <Position X="7.25" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\Domain\Leergebied.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projecten2Groep7.Models.Domain.Verlanglijst">
+    <Position X="8.5" Y="5.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAgAAAAAAAAAAAEAAAAAAAACAAAAAAIAAIAAAAE=</HashCode>
+      <FileName>Models\Domain\Verlanglijst.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Producten" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Projecten2Groep7.Models.Domain.ReservatieLijn">
+    <Position X="1.75" Y="8.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAYCAAAAAAAAAAAAAAAUAAAgAAAAAgAIAAAAAAAAEAA=</HashCode>
+      <FileName>Models\Domain\ReservatieLijn.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product" />
+      <Property Name="Reservatie" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Dagen" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Projecten2Groep7.Models.Domain.Reservatie">
+    <Position X="8.5" Y="8.5" Width="3" />
+    <AssociationLine Name="ReservatieLijnen" Type="Projecten2Groep7.Models.Domain.ReservatieLijn">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.55" Y="0.159" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAICACUAgAAAAgAAAAAAAAQ=</HashCode>
+      <FileName>Models\Domain\Reservatie.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ReservatieUser" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ReservatieLijnen" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Projecten2Groep7.Models.ApplicationUser">
+    <Position X="14" Y="3.25" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgCAAAAAAAAAAAhAABAAAAAAAAAAAAQAAEACA=</HashCode>
+      <FileName>Models\Domain\ApplicationUser.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Verlanglijst" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Projecten2Groep7.Models.Domain.Student">
+    <Position X="15" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Models\Domain\Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projecten2Groep7.Models.Domain.Personeel">
+    <Position X="17.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAIAAAQAAAEAAAAAAAAAAACA=</HashCode>
+      <FileName>Models\Domain\Personeel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projecten2Groep7.Models.Domain.Blokkering">
+    <Position X="8.5" Y="11.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\Blokkering.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projecten2Groep7.Models.Domain.BlokkeringDag">
+    <Position X="1.25" Y="11.5" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Models\Domain\BlokkeringDag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

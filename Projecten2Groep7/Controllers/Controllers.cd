@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Projecten2Groep7.Controllers.AccountController">
+    <Position X="17.25" Y="0.75" Width="8.75" />
+    <NestedTypes>
+      <Class Name="Projecten2Groep7.Controllers.AccountController.ChallengeResult" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\AccountController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAABAChACAAAAAAAAFgEgAARAAhMKIAAAMRAAQgAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projecten2Groep7.Controllers.HomeController">
+    <Position X="3.75" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projecten2Groep7.Controllers.ManageController">
+    <Position X="9.25" Y="5" Width="6.5" />
+    <NestedTypes>
+      <Enum Name="Projecten2Groep7.Controllers.ManageController.ManageMessageId" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\ManageController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAABACAQiAAgAAAAEFhAAAAAAEAIMIAAEEEgAAkAAA=</HashCode>
+      <FileName>Controllers\ManageController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projecten2Groep7.Controllers.ProductController">
+    <Position X="0.5" Y="0.5" Width="9.5" />
+    <TypeIdentifier>
+      <HashCode>GAAAAQAAAAABAAAAAAAQAAAAAAAAAAACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ProductController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projecten2Groep7.Controllers.ReservatieController">
+    <Position X="0.5" Y="3.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ReservatieController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projecten2Groep7.Controllers.VerlanglijstController">
+    <Position X="0.5" Y="5" Width="8.5" />
+    <TypeIdentifier>
+      <HashCode>CAJAAQAFAAABAACAgAAABgAAAAAAAAAAAAEACAAAAAA=</HashCode>
+      <FileName>Controllers\VerlanglijstController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
